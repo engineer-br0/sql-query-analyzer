@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify;
-
+from flask_cors import CORS
 from analyzer import analyze_query
 
 app = Flask(__name__)
+
+# Enable CORS for all routes
+CORS(app)
 
 @app.route('/', methods=["GET"])
 def home():
